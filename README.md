@@ -1,7 +1,7 @@
 # ConcurrentDistributedSystems
 Programming concurrent and distributed systems with Elixir
 
-## Programming a ring of nodes, passing a token around 
+## Message passing in a token node structure
 **TokenRingPlus.exs:** Elixir program that creates a ring of N processes and sends M times a token with an associated
 counter in the ring.
 
