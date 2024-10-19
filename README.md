@@ -16,6 +16,7 @@ one to its successor. It also prints the value of the counter.
 node write the last value of the counter into a file, together with its process
 identifier and the identifier of its successor in the ring.
 
+### Log file
 ```
 Process[5] (#PID<0.106.0>) got all the 2 tokens and shut gracefully down. ✔️
 Process[2] (#PID<0.114.0>) got all the 2 tokens and shut gracefully down. ✔️
