@@ -98,9 +98,8 @@ Process[9972] (#PID<0.13861.0>) ➡ Got all the tokens and can shutdown graceful
 ```
 
 ### Checking specific Processes with grep
+**elixir TokenRingPlus.exs | grep -F 'Process[10'**
 ```
-elixir TokenRingPlus.exs | grep -F 'Process[10'
-
 Process[10] (#PID<0.106.0>) received token.
 Process[10] (#PID<0.106.0>) got: 1 tokens.
 Process[10] (#PID<0.106.0>) received token.
