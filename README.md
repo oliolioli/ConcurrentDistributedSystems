@@ -1,6 +1,14 @@
 # ConcurrentDistributedSystems
 Programming concurrent and distributed systems with Elixir
 
+## Howto run Elixir programs locally in some minutes:
+1. Open Terminal
+2. $ **mix new foo** (creates a scaffold for your program)
+3. make sure to be in the specific workspace directory (where "mix.exs" has to be found)
+4. Run the binaries with: $ **iex -S mix**
+5. Now the iex-console opens. Run functions as the follows: **iex> Modulename.function** **e.g. iex> Foo.start**
+6. use **iex> recompile** after every change to recompile
+
 ## TokenRingPlus.exs: Message passing in a token node structure
 Elixir program that creates a ring of N processes and sends M times a token with an associated
 counter in the ring.
