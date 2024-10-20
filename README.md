@@ -5,17 +5,40 @@ Programming concurrent and distributed systems with Elixir
 Elixir program that creates a ring of N processes and sends M times a token with an associated
 counter in the ring.
 
-The following constraints must be fulfilled:
-
 1. All ring processes have exactly the same code, except the starting process s that
 provides a function start(N, M) to launch the application.
-2. Each time a process p receives a token, p sends the associated counter incremented by
-one to its successor. It also prints the value of the counter.
+2. Each time a process p receives a token, p sends the token to its successor and
+increments a local counter. It also prints the current value of the counter.
 3. When there are no more tokens, each process terminates gracefully. Each
 node write the last value of the counter into a file, together with its process
 identifier and the identifier of its successor in the ring.
 
+All processes in the ring to act as peers and spawn their successor, except for the last one that closes the ring.
+
 ### Log file
+The following code provides a function **write_to_file** and generates respectively append to a log file:
+
+```
+defmodule FileWriter do
+  # Function to write data to a file
+  def write_to_file(file_path, data) do
+    case File.open(file_path, [:append, :utf8]) do
+      {:ok, file} ->
+        # Writing the data to the file
+        IO.write(file, data)
+        
+        # Closing the file
+        File.close(file)
+
+        {:ok, "Data written successfully!"}
+        
+      {:error, reason} ->
+        {:error, "Failed to open the file: #{reason}"}
+    end
+  end
+end
+```
+
 ```
 Process[5] (#PID<0.106.0>) got all the 2 tokens and shut gracefully down. ✔️
 Process[2] (#PID<0.114.0>) got all the 2 tokens and shut gracefully down. ✔️
