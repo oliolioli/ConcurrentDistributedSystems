@@ -17,15 +17,15 @@ All processes in the ring to act as peers and spawn their successor, except for 
 
 ### Start: Spawn all the processes of the ring
 ```
-  	# spawn all the processes
-	firstProcessID = spawn(fn -> TokenRing.createProcess(n, 0, m) end)         # second argument must be null, its the definition of the counter
+# spawn all the processes
+firstProcessID = spawn(fn -> TokenRing.createProcess(n, 0, m) end)         # second argument must be null, its the definition of the counter
 
-	# send m times a token into the ring (begin with the first (known) process
-	IO.puts "### Sending #{m} token(s) into the ring. 🚀 ###"
+# send m times a token into the ring (begin with the first (known) process
+IO.puts "### Sending #{m} token(s) into the ring. 🚀 ###"
 
-	Enum.each(1..m, fn(_x) ->
-	  send(firstProcessID, :token)
-	end)
+Enum.each(1..m, fn(_x) ->
+  send(firstProcessID, :token)
+end)
 ```
 
 ### Log file
@@ -52,6 +52,7 @@ defmodule FileWriter do
 end
 ```
 
+#### Example log file
 ```
 Process[5] (#PID<0.106.0>) got all the 2 tokens and shut gracefully down. ✔️
 Process[2] (#PID<0.114.0>) got all the 2 tokens and shut gracefully down. ✔️
