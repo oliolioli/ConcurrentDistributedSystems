@@ -50,6 +50,11 @@ def createProcess(n, counter, m) do
   nextProcessID = spawn(fn -> createProcess(n - 1, counter, m) end)
 ```
 
+### Know your own PID when you're a service
+```elixir
+#{inspect(self())}
+```
+
 ### Receive token messages and send them to next process
 ```elixir
 # Receive token (message ':token') and then send it further to the next process
