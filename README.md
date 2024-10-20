@@ -27,7 +27,7 @@ identifier and the identifier of its successor in the ring.
 
 All processes in the ring to act as peers and spawn their successor, except for the last one that closes the ring.
 
-Text above and the picture all taken from a Lecture at University of Fribourg 2024 by [Pascal Felber](https://www.unine.ch/pascal.felber), University of Neuchatel.
+Paragraph above and the picture all taken from a Lecture at University of Fribourg 2024 by [Pascal Felber](https://www.unine.ch/pascal.felber), University of Neuchatel.
 
 ### Start: Spawn all the processes of the ring
 ```
@@ -88,6 +88,16 @@ defmodule FileWriter do
     end
   end
 end
+```
+
+#### Shutting down process and write status into log file
+```
+current_datetime = DateTime.utc_now()
+timestamp = DateTime.to_string(current_datetime)
+FileWriter.write_to_file("TokenRing.log", "#{timestamp}: Process[#{n}] (#{inspect(self())}) got all the #{m} tokens and shut gracefully down. ✔️ Successor: #{to_string(n-1)}\n")
+IO.puts("Process[#{to_string(n)}] (#{inspect(self())}) ➡️ Got all the tokens and can shutdown gracefully. ✔️")
+
+Process.exit(self(), :normal)
 ```
 
 #### Example log file
