@@ -13,10 +13,11 @@ Programming concurrent and distributed systems with Elixir
 
 ## TokenRingPlus.exs: Message passing in a token node structure
 Elixir program that creates a ring of N processes and sends M times a token with an associated
-counter in the ring. Lecture at University of Fribourg by [Pascal Felber](https://www.unine.ch/pascal.felber), University of Neuchatel.
+counter in the ring.
 
 ![image](https://github.com/user-attachments/assets/77be357c-5371-41ec-9e83-245e7e97ce37)
 
+The text below and the picture all taken from a Lecture at University of Fribourg by [Pascal Felber](https://www.unine.ch/pascal.felber), University of Neuchatel.
 
 1. All ring processes have exactly the same code, except the starting process s that
 provides a function start(N, M) to launch the application.
