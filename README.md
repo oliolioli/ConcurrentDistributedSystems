@@ -66,6 +66,16 @@ receive do
 createProcess(n, new_counter, m)
 ```
 
+### Shutting down process gracefully (after receiving all tokens)
+```
+# Increment the counter when receiving :token
+new_counter = counter + 1
+...
+# Check if we got all the tokens
+if new_counter == m do
+  Process.exit(self(), :normal)
+```
+
 ### Log file
 The following code provides a function **write_to_file** and generates respectively append to a log file:
 
@@ -90,14 +100,12 @@ defmodule FileWriter do
 end
 ```
 
-#### Shutting down process and write status into log file
+#### Write status into log file
 ```
 current_datetime = DateTime.utc_now()
 timestamp = DateTime.to_string(current_datetime)
 FileWriter.write_to_file("TokenRing.log", "#{timestamp}: Process[#{n}] (#{inspect(self())}) got all the #{m} tokens and shut gracefully down. ✔️ Successor: #{to_string(n-1)}\n")
 IO.puts("Process[#{to_string(n)}] (#{inspect(self())}) ➡️ Got all the tokens and can shutdown gracefully. ✔️")
-
-Process.exit(self(), :normal)
 ```
 
 #### Example log file
