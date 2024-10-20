@@ -15,6 +15,19 @@ identifier and the identifier of its successor in the ring.
 
 All processes in the ring to act as peers and spawn their successor, except for the last one that closes the ring.
 
+### Start: Spawn all the processes of the ring
+```
+  	# spawn all the processes
+	firstProcessID = spawn(fn -> TokenRing.createProcess(n, 0, m) end)         # second argument must be null, its the definition of the counter
+
+	# send m times a token into the ring (begin with the first (known) process
+	IO.puts "### Sending #{m} token(s) into the ring. 🚀 ###"
+
+	Enum.each(1..m, fn(_x) ->
+	  send(firstProcessID, :token)
+	end)
+```
+
 ### Log file
 The following code provides a function **write_to_file** and generates respectively append to a log file:
 
