@@ -28,6 +28,30 @@ Enum.each(1..m, fn(_x) ->
 end)
 ```
 
+### Spawn next process(es) (recursively) in the ring
+```
+def createProcess(n, counter, m) do
+
+  # Spawn next process in the ring (recursively)
+  nextProcessID = spawn(fn -> createProcess(n - 1, counter, m) end)
+```
+
+### 
+```
+# Receive token (message ':token') and then send it further to the next process
+receive do
+  :token -> IO.puts("Process[#{to_string(n)}] (#{inspect(self())}) received token.")
+  
+    # Pass the token to the next process (known because we spawned it (see above))
+    send(nextProcessID, :token)
+```
+
+### Count tokens (recursively)
+```
+# Call the loop function again with the updated counter value
+createProcess(n, new_counter, m)
+```
+
 ### Log file
 The following code provides a function **write_to_file** and generates respectively append to a log file:
 
