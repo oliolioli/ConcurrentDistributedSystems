@@ -1,7 +1,7 @@
 # ConcurrentDistributedSystems
 Programming concurrent and distributed systems with Elixir
 
-## Howto run Elixir programs locally in some minutes
+### Howto run Elixir programs locally in some minutes
 1. Open Terminal
 2. $ **mix new foo** (creates a scaffold for your program)
 3. make sure to be in the specific workspace directory (where "mix.exs" has to be found)
