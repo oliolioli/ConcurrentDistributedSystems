@@ -52,7 +52,9 @@ def createProcess(n, counter, m) do
 
 ### Know your own PID when you're a service
 ```elixir
-#{inspect(self())}
+inspect(self()
+
+# will print something like '(#PID<0.1261.0>)'
 ```
 
 ### Receive token messages and send them to next process
