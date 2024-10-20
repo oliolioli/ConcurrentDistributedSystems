@@ -30,7 +30,7 @@ All processes in the ring to act as peers and spawn their successor, except for 
 Paragraph above and the picture all taken from a Lecture at University of Fribourg 2024 by [Pascal Felber](https://www.unine.ch/pascal.felber), University of Neuchatel.
 
 ### Start: Spawn all the processes of the ring
-```
+```elixir
 # spawn all the processes
 firstProcessID = spawn(fn -> TokenRing.createProcess(n, 0, m) end)         # second argument must be null, its the definition of the counter
 
@@ -43,31 +43,31 @@ end)
 ```
 
 ### Spawn next process(es) (recursively) in the ring
-```
+```elixir
 def createProcess(n, counter, m) do
 
   # Spawn next process in the ring (recursively)
   nextProcessID = spawn(fn -> createProcess(n - 1, counter, m) end)
 ```
 
-### 
-```
+### Receive token messages and send them to next process
+```elixir
 # Receive token (message ':token') and then send it further to the next process
-receive do
+**receive** do
   :token -> IO.puts("Process[#{to_string(n)}] (#{inspect(self())}) received token.")
   
     # Pass the token to the next process (known because we spawned it (see above))
-    send(nextProcessID, :token)
+    **send**(nextProcessID, :token)
 ```
 
 ### Count tokens (recursively)
-```
+```elixir
 # Call the loop function again with the updated counter value
 createProcess(n, new_counter, m)
 ```
 
 ### Shutting down process gracefully (after receiving all tokens)
-```
+```elixir
 # Increment the counter when receiving :token
 new_counter = counter + 1
 ...
@@ -79,7 +79,7 @@ if new_counter == m do
 ### Log file
 The following code provides a function **write_to_file** and generates respectively append to a log file:
 
-```
+```elixir
 defmodule FileWriter do
   # Function to write data to a file
   def write_to_file(file_path, data) do
@@ -101,7 +101,7 @@ end
 ```
 
 #### Write status into log file
-```
+```elixir
 current_datetime = DateTime.utc_now()
 timestamp = DateTime.to_string(current_datetime)
 FileWriter.write_to_file("TokenRing.log", "#{timestamp}: Process[#{n}] (#{inspect(self())}) got all the #{m} tokens and shut gracefully down. ✔️ Successor: #{to_string(n-1)}\n")
@@ -118,4 +118,3 @@ Process[1] (#PID<0.115.0>) got all the 2 tokens and shut gracefully down. ✔️
 2024-10-19 18:58:39.941094Z: Process[4] (#PID<0.112.0>) got all the 2 tokens and shut gracefully down. ✔️
 2024-10-19 18:58:39.941098Z: Process[3] (#PID<0.113.0>) got all the 2 tokens and shut gracefully down. ✔️
 ```
-
