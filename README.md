@@ -17,8 +17,6 @@ counter in the ring.
 
 ![image](https://github.com/user-attachments/assets/77be357c-5371-41ec-9e83-245e7e97ce37)
 
-The text below and the picture all taken from a Lecture at University of Fribourg by [Pascal Felber](https://www.unine.ch/pascal.felber), University of Neuchatel.
-
 1. All ring processes have exactly the same code, except the starting process s that
 provides a function start(N, M) to launch the application.
 2. Each time a process p receives a token, p sends the token to its successor and
@@ -28,6 +26,8 @@ node write the last value of the counter into a file, together with its process
 identifier and the identifier of its successor in the ring.
 
 All processes in the ring to act as peers and spawn their successor, except for the last one that closes the ring.
+
+Text above and the picture all taken from a Lecture at University of Fribourg 2024 by [Pascal Felber](https://www.unine.ch/pascal.felber), University of Neuchatel.
 
 ### Start: Spawn all the processes of the ring
 ```
