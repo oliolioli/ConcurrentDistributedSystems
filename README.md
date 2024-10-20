@@ -53,11 +53,11 @@ def createProcess(n, counter, m) do
 ### Receive token messages and send them to next process
 ```elixir
 # Receive token (message ':token') and then send it further to the next process
-**receive** do
+receive do
   :token -> IO.puts("Process[#{to_string(n)}] (#{inspect(self())}) received token.")
   
     # Pass the token to the next process (known because we spawned it (see above))
-    **send**(nextProcessID, :token)
+    send(nextProcessID, :token)
 ```
 
 ### Count tokens (recursively)
