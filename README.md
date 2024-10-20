@@ -85,18 +85,43 @@ if new_counter == m do
 
 ## Program running 10'000 processes and 10 tokens: stdout  
 ```
-Process[9989] (#PID<0.7192.0>) ➡ Got all the tokens and can shutdown gracefully. ✔
-Process[9964] (#PID<0.9291.0>) got: 3 tokens.
-Process[9966] (#PID<0.11510.0>) got: 5 tokens.
-Process[9969] (#PID<0.13374.0>) got: 7 tokens.
-Process[9970] (#PID<0.14730.0>) got: 8 tokens.
-Process[9971] (#PID<0.15858.0>) got: 9 tokens.
-Process[9972] (#PID<0.16736.0>) got: 10 tokens.
-Process[9955] (#PID<0.151.0>) received token.
-Process[9967] (#PID<0.12818.0>) received token.
-Process[9962] (#PID<0.7938.0>) received token.
-Process[9964] (#PID<0.11059.0>) received token.
-Process[9963] (#PID<0.9661.0>) received token.
+Process[9970] (#PID<0.14824.0>) received token.
+Process[9965] (#PID<0.9746.0>) got: 5 tokens.
+Process[9963] (#PID<0.8773.0>) got: 3 tokens.
+Process[9966] (#PID<0.10370.0>) got: 6 tokens.
+Process[9953] (#PID<0.153.0>) got: 1 tokens.
+Process[9952] (#PID<0.154.0>) received token.
+Process[9973] (#PID<0.13460.0>) ➡ Got all the tokens and can shutdown gracefully. ✔
+Process[9964] (#PID<0.10043.0>) received token.
+Process[9962] (#PID<0.9012.0>) received token.
+Process[9972] (#PID<0.13861.0>) ➡ Got all the tokens and can shutdown gracefully. ✔
+```
+
+### Checking specific Processes with grep
+```
+**elixir TokenRingPlus.exs | grep -F 'Process[10'**
+
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 1 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 2 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 3 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 4 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 5 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 6 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 7 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 8 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 9 tokens.
+Process[10] (#PID<0.106.0>) received token.
+Process[10] (#PID<0.106.0>) got: 10 tokens.
+Process[10] (#PID<0.106.0>) ➡ Got all the tokens and can shutdown gracefully. ✔
 ```
 
 ### Log file
