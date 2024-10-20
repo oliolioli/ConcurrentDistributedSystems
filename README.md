@@ -15,6 +15,9 @@ Programming concurrent and distributed systems with Elixir
 Elixir program that creates a ring of N processes and sends M times a token with an associated
 counter in the ring. Lecture at University of Fribourg by [Pascal Felber](https://www.unine.ch/pascal.felber), University of Neuchatel.
 
+![image](https://github.com/user-attachments/assets/77be357c-5371-41ec-9e83-245e7e97ce37)
+
+
 1. All ring processes have exactly the same code, except the starting process s that
 provides a function start(N, M) to launch the application.
 2. Each time a process p receives a token, p sends the token to its successor and
