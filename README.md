@@ -1,4 +1,4 @@
-# ConcurrentDistributedSystems
+# ConcurrentDistributedSystems 📬
 Programming concurrent and distributed systems with Elixir.
 
 ### ☕ Howto run Elixir programs locally in some minutes
