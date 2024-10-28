@@ -12,8 +12,8 @@ Programming concurrent and distributed systems with Elixir.
 💬 Or much easier: just pack all your Elixir code into a **file *.exs** and **run** it with **$ elixir foo.exs**
 
 
-## Read about the different projects:
-**☕ Message passing in a token ring like node structure:** 
+## ☕ Read about the different projects:
+**💌 Message passing in a token ring like node structure:** 
 https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/TokenRingMessaging
 
-**☑️ Implementation of a Chandry-Misra distributed shortest** path algorithm: https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/ShortestPathAlgorithm
+**🚶 Implementation of a Chandry-Misra distributed shortest** path algorithm: https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/ShortestPathAlgorithm
