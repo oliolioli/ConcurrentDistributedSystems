@@ -13,6 +13,5 @@ Programming concurrent and distributed systems with Elixir.
 
 
 ## Read about the different projects:
-
-https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/TokenRingMessaging
-https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/ShortestPathAlgorithm
+- Message passing in a token ring like node structure: https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/TokenRingMessaging
+- Implementation of a Chandry-Misra distributed shortest path algorithm: https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/ShortestPathAlgorithm
