@@ -21,12 +21,13 @@ Edge weights will be annotated along each connection line to indicate the relati
 
 ## Messaging
 ```elixir
-        # Send ACK or STOP to predecessors
-        if Enum.empty?(neighbours) do
-          IO.puts("❌#{name}(#{id}) sends STOP as he doesn't have any neighbours.")
-          send(Process.whereis(newPredecessor), {:STOP})
-        else
-          IO.puts("💌 #{name}(#{id}) sends ACK to #{newPredecessor}")
-          send(Process.whereis(newPredecessor), {:ACK})
-        end
+# Send ACK or STOP to predecessors
+if Enum.empty?(neighbours) do
+  IO.puts("❌#{name}(#{id}) sends STOP as he doesn't have any neighbours.")
+  send(Process.whereis(newPredecessor), {:STOP})
+else
+  IO.puts("💌 #{name}(#{id}) sends ACK to #{newPredecessor}")
+  send(Process.whereis(newPredecessor), {:ACK})
+end
 ```
+
