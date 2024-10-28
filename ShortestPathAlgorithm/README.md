@@ -15,3 +15,6 @@ Message types:
 Each node will be represented by a labeled circle, such as :a, :b, etc.
 Connections between nodes will be represented as directed edges with weights.
 Edge weights will be annotated along each connection line to indicate the relation weight.
+
+## Process network graph
+![graph](https://github.com/user-attachments/assets/ba76e2cd-7434-4ebb-8da4-81efb67d67e8)
