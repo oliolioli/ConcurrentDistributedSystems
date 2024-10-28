@@ -20,6 +20,7 @@ Edge weights will be annotated along each connection line to indicate the relati
 ![graph](https://github.com/user-attachments/assets/ba76e2cd-7434-4ebb-8da4-81efb67d67e8)
 
 ## Messaging
+### Send ACK or STOP to predecessors
 ```elixir
 # Send ACK or STOP to predecessors
 if Enum.empty?(neighbours) do
@@ -31,3 +32,21 @@ else
 end
 ```
 
+### Check if new distance is shorter
+
+```elixir
+# Check if new distance is shorter. If so, update myself and send messages to my neighbours
+if newDist < d do
+  # Iterate through all neighbours and send them (the new) distance information
+  Enum.each(neighbours, fn {neighbourName, neighbourDist} ->
+    # Add new updated distance of node plus the next neighbours distance together and pass it on
+    newNeighbourDist = newDist + neighbourDist
+    send(Process.whereis(neighbourName), {:distUpdate, name, newNeighbourDist})
+
+    # Write some status info
+    IO.puts("📤 #{name}(#{id}) sent (distance=#{newNeighbourDist}, predecessor=a) --> #{neighbourName}")
+  end) 
+
+   # Update node (predecessor, num (by counting neighbours) and distance) if we found a smaller distance
+   cm({id, name}, {newPredecessor, length(neighbours), newDist}, neighbours)
+```
