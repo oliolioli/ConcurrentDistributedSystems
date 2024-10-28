@@ -6,11 +6,11 @@ This program implements the Chandry-Misra distributed shortest path algorithm. I
 - A set of properties or attributes (like {nil, 0, :infinity} which we’ll consider as metadata for now),
 - A list of connections to other nodes, each specified with a target node and a weight.
 
-Message types:
-- start
-- distUpdate
-- ACK
-- STOP
+### Message types:
+- **start** (to initialise the whole graph with our starting knowledge)
+- **distUpdate** (to update distances between nodes)
+- **ACK** (to count if a node informed all of his neighbours and if they received it)
+- **STOP** (if a node knows that all his neighbours are informed, he can go offline) 
 
 Each node will be represented by a labeled circle, such as :a, :b, etc.
 Connections between nodes will be represented as directed edges with weights.
