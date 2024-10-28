@@ -18,3 +18,15 @@ Edge weights will be annotated along each connection line to indicate the relati
 
 ## Process network graph
 ![graph](https://github.com/user-attachments/assets/ba76e2cd-7434-4ebb-8da4-81efb67d67e8)
+
+## Messaging
+```elixir
+        # Send ACK or STOP to predecessors
+        if Enum.empty?(neighbours) do
+          IO.puts("❌#{name}(#{id}) sends STOP as he doesn't have any neighbours.")
+          send(Process.whereis(newPredecessor), {:STOP})
+        else
+          IO.puts("💌 #{name}(#{id}) sends ACK to #{newPredecessor}")
+          send(Process.whereis(newPredecessor), {:ACK})
+        end
+```
