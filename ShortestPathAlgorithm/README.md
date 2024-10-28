@@ -19,7 +19,7 @@ Edge weights will be annotated along each connection line to indicate the relati
 ## Process network graph
 ![graph](https://github.com/user-attachments/assets/ba76e2cd-7434-4ebb-8da4-81efb67d67e8)
 
-## Messaging
+## Messaging snippets
 
 ### Check if new distance is shorter
 
