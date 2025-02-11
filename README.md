@@ -17,3 +17,5 @@ Programming concurrent and distributed systems with Elixir.
 https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/TokenRingMessaging
 
 **🚶 Implementation of a Chandry-Misra distributed shortest** path algorithm: https://github.com/oliolioli/ConcurrentDistributedSystems/tree/main/ShortestPathAlgorithm
+
+**🌀 Distributed Prime Spirals:** calculates prime numbers across multiple nodes and visualizes them: https://github.com/Wii42/DistributedPrimeSpirals
