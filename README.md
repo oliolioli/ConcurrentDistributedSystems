@@ -9,7 +9,7 @@ Programming concurrent and distributed systems with Elixir.
 5. Now the iex-console opens. Run functions as the follows: **iex> Modulename.function** **e.g. iex> Foo.start**
 6. use **iex> recompile** after every change to recompile
 
-💬 Or much easier: just pack all your Elixir code into a **file *.exs** and **run** it with **$ elixir foo.exs**
+💬 Or much easier: just pack all your Elixir code into a **file* **.exs** and **run** it with **$ elixir foo.exs**
 
 
 ## 📚 Read about the different projects:
